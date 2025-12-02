@@ -1,0 +1,345 @@
+{
+    "success": true,
+    "message": null,
+    "userId": "69037e32abb9f547d9daae59",
+    "email": "abhinavdecide@gmail.com",
+    "fullName": "Abhinav Sunny",
+    "platformStatus": {
+        "githubConnected": false,
+        "githubUsername": "abhinavbhope",
+        "githubLastSynced": "2025-11-02T13:50:57.934",
+        "githubEnriched": true,
+        "leetcodeConnected": false,
+        "leetcodeUsername": "abhinav_bhope",
+        "leetcodeLastSynced": null,
+        "leetcodeEnriched": true
+    },
+    "githubAnalysis": {
+        "profileSummary": {
+            "githubUsername": "abhinavbhope",
+            "publicRepoCount": 11,
+            "followerCount": 1,
+            "totalStars": 0,
+            "lastYearCommits": 3,
+            "primaryLanguage": "JavaScript",
+            "primaryLanguagePct": 68.44,
+            "repos": [
+                {
+                    "repoName": "iot_internal",
+                    "primaryLanguage": "TypeScript",
+                    "starCount": 0,
+                    "forkCount": 0,
+                    "commitCount30d": 3,
+                    "totalCommits": 2,
+                    "hasReadme": true,
+                    "hasTests": false,
+                    "hasDockerfile": false,
+                    "hasCi": false,
+                    "repoSizeKb": 189,
+                    "topics": "",
+                    "repositoryStructure": {
+                        "sourceDirectories": [],
+                        "testDirectories": [],
+                        "configFiles": [],
+                        "documentationFiles": [],
+                        "buildFiles": [],
+                        "assetDirectories": [],
+                        "totalFiles": 60,
+                        "totalFolders": 9,
+                        "hasStandardStructure": true,
+                        "primaryArchitecture": "MVC",
+                        "structureQualityScore": 75.0
+                    },
+                    "architectureScore": 75.0,
+                    "codeOrganizationScore": null,
+                    "testingSetupScore": 10.0,
+                    "detectedPatterns": [
+                        "MVC",
+                        "TypeScript"
+                    ],
+                    "qualityScore": 75,
+                    "qualityReason": "The structure follows an MVC pattern, but the lack of tests significantly reduces the overall quality score.  There are a reasonable number of config and documentation files present. However, the deep source directories suggest potential for further modularization. Consider adding unit and integration tests to improve reliability. The `src/ai` directory is a key feature."
+                },
+                {
+                    "repoName": "studio",
+                    "primaryLanguage": "JavaScript",
+                    "starCount": 0,
+                    "forkCount": 0,
+                    "commitCount30d": 0,
+                    "totalCommits": 3,
+                    "hasReadme": true,
+                    "hasTests": false,
+                    "hasDockerfile": false,
+                    "hasCi": false,
+                    "repoSizeKb": 225,
+                    "topics": "",
+                    "repositoryStructure": {
+                       "totalFiles": 73,
+                        "totalFolders": 12
+                    },
+                    "architectureScore": 75.0,
+                    "codeOrganizationScore": null,
+                    "testingSetupScore": 10.0,
+                    "detectedPatterns": [
+                        "Component-Based",
+                        "JavaScript"
+                    ],
+                    "qualityScore": 70,
+                    "qualityReason": "This project uses a component-based architecture, which is generally good for maintainability. However, the absence of tests is a significant drawback. The code organization appears decent, but could benefit from more explicit component separation. The `src/ai` directory and related files are present again, which is interesting. No testing at all."
+                },
+                {
+                    "repoName": "careoptics-backend",
+                    "primaryLanguage": "Java",
+                    "starCount": 0,
+                    "forkCount": 0,
+                    "commitCount30d": 0,
+                    "totalCommits": 15,
+                    "hasReadme": false,
+                    "hasTests": false,
+                    "hasDockerfile": true,
+                    "hasCi": false,
+                    "repoSizeKb": 41383,
+                    "topics": "",
+                    "repositoryStructure": {
+                        "totalFiles": 319,
+                        "totalFolders": 48
+                    },
+                    "architectureScore": 75.0,
+                    "codeOrganizationScore": null,
+                    "testingSetupScore": 75.0,
+                    "detectedPatterns": [
+                        "MVC",
+                        "Java",
+                        "Docker"
+                    ],
+                    "qualityScore": 75,
+                    "qualityReason": "The project includes a substantial amount of tests, but putting them in `src/main/java/...` is highly unusual. They belong in `src/test/java/...`. There is no README file. Docker is setup, which is good. The structure indicates a standard Java backend application. The key source directories are standard for a Java project, but the test structure is concerning."
+                },
+                {
+                    "repoName": "CareOptics_frontend",
+                    "primaryLanguage": "JavaScript",
+                    "starCount": 0,
+                    "forkCount": 0,
+                    "commitCount30d": 0,
+                    "totalCommits": 16,
+                    "hasReadme": true,
+                    "hasTests": false,
+                    "hasDockerfile": false,
+                    "hasCi": false,
+                    "repoSizeKb": 660,
+                    "topics": "",
+                    "repositoryStructure": {
+                        "totalFiles": 145,
+                        "totalFolders": 47
+                    },
+                    "architectureScore": 80.0,
+                    "codeOrganizationScore": null,
+                    "testingSetupScore": 60.0,
+                    "detectedPatterns": [
+                        "MVC",
+                        "JavaScript"
+                    ],
+                    "qualityScore": 85,
+                    "qualityReason": "The frontend has a good number of source and test directories, suggesting a relatively well-structured application. The presence of admin features like `/app/(admin)` indicates a more complex application. Good architecture and a decent number of tests. The presence of `src/ai` continues to be a consistent pattern. Consider improving the tests with more comprehensive coverage."
+                }
+            ],
+            "derivedScore": 60,
+            "derivedLevel": "INTERMEDIATE",
+            "scoreCalculatedAt": "2025-11-02T19:29:17.456"
+        },
+        "analytics": {
+            "languageAnalysis": {
+                "distribution": [
+                    {
+                        "language": "JavaScript",
+                        "percentage": 68.44,
+                        "bytes": 100000,
+                        "repoCount": 11
+                    }
+                ],
+                "primaryLanguage": "JavaScript",
+                "primaryLanguagePct": 68.44
+            },
+            "repositoryQuality": {
+                "averageQualityScore": 54.09,
+                "topRepositories": [],
+                "trend": {
+                    "weeklyChange": 5.2,
+                    "trendDirection": "IMPROVING"
+                }
+            },
+            "activityMetrics": {
+                "last30DaysCommits": [],
+                "totalCommits30d": 151,
+                "weeklyAverage": 37
+            },
+            "featureAdoption": {
+                "reposWithReadme": 6,
+                "reposWithTests": 0,
+                "reposWithDocker": 1,
+                "reposWithCI": 0,
+                "readmeCoverage": 54.54,
+                "testCoverage": 0.0
+            }
+        },
+        "repoStructures": [],
+        "derivedScore": 60,
+        "derivedLevel": "INTERMEDIATE",
+        "githubAnalysisReasoning": "The structure follows an MVC pattern...",
+        "scoreCalculatedAt": "2025-11-02T19:29:17.456"
+    },
+    "leetcodeAnalysis": {
+        "profileSummary": {
+            "leetcodeUsername": "abhinav_bhope",
+            "ranking": 675847,
+            "reputation": 0,
+            "problemStats": {
+                "totalSolved": 202,
+                "easySolved": 100,
+                "mediumSolved": 100,
+                "hardSolved": 2,
+                "totalSubmissions": 202,
+                "acceptedSubmissions": 285
+            },
+            "beatStats": [],
+            "contestSummary": null,
+            "allTopics": null,
+            "activityData": {
+                "activeYears": null,
+                "streak": 11,
+                "totalActiveDays": 86,
+                "submissionCalendar": {
+                    "1757721600": 3,
+                    "1755993600": 4
+                },
+                "dccBadges": null
+            }
+        },
+        "analytics": {
+            "problemSolving": {
+                "difficultyBreakdown": {
+                    "easySolved": 100,
+                    "mediumSolved": 100,
+                    "hardSolved": 2,
+                    "totalSolved": 202,
+                    "difficultyPercentages": {
+                        "Easy": 49.5,
+                        "Medium": 49.5,
+                        "Hard": 0.99
+                    }
+                },
+                "acceptanceStats": null,
+                "monthlyTrend": null
+            },
+            "contestPerformance": null,
+            "topicAnalysis": null,
+            "activityPattern": {
+                "submissionCalendar": null,
+                "currentStreak": 11,
+                "longestStreak": 11,
+                "totalActiveDays": 86,
+                "weeklyActivity": []
+            }
+        },
+        "geminiRating": {
+            "leetcodeUsername": "abhinav_bhope",
+            "overallScore": 65.0,
+            "problemSolvingScore": 70.0,
+            "algorithmScore": 60.0,
+            "dataStructureScore": 60.0,
+            "contestPerformanceScore": 20.0,
+            "skillLevel": "INTERMEDIATE",
+            "primarySpecialization": "GENERAL",
+            "strengths": [],
+            "improvementAreas": [],
+            "recommendedTopics": [],
+            "detailedAnalysis": "The LeetCode profile shows good activity with 202 problems solved...",
+            "calculatedAt": "2025-11-02T19:29:17.465"
+        },
+        "contestHistory": []
+    },
+    "skillAssessment": {
+        "radarChart": {
+            "skillCategories": [
+                "Problem Solving",
+                "Algorithm Design",
+                "Data Structures",
+                "Code Quality",
+                "Architecture",
+                "Testing",
+                "Documentation",
+                "Project Management"
+            ],
+            "skillScores": [
+                70.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0
+            ],
+            "averageScore": 61.25
+        },
+        "skillMetrics": [],
+        "improvementPlan": {
+            "immediateActions": [
+                {
+                    "title": "Improve Significantly improve performance on hard problems",
+                    "description": "Focus on Significantly improve performance on hard problems as identified by AI analysis",
+                    "priority": "HIGH",
+                    "estimatedTime": "2-4 weeks"
+                }
+            ],
+            "longTermGoals": [
+                {
+                    "title": "Master Dynamic Programming",
+                    "description": "Achieve advanced proficiency in Dynamic Programming as recommended by AI",
+                    "priority": "MEDIUM",
+                    "estimatedTime": "6-12 months"
+                }
+            ],
+            "learningPaths": []
+        }
+    },
+    "combinedInsights": {
+        "overallAssessment": {
+            "combinedScore": 65.0,
+            "skillLevel": "INTERMEDIATE",
+            "primarySpecialization": "GENERAL",
+            "detailedAnalysis": "The LeetCode profile shows good activity with 202 problems solved, demonstrating a commitment to problem-solving. However, the low number of hard problems solved suggests a need to improve skills in more complex algorithms and data structures. Consistent contest participation would also enhance speed and efficiency.",
+            "keyStrengths": [
+                "Solid foundation in easy and medium-level problems",
+                "Good breadth of problem-solving experience"
+            ],
+            "growthAreas": [
+                "Significantly improve performance on hard problems",
+                "Focus on specific algorithm and data structure categories for deeper expertise",
+                "Participate in more contests to improve speed and accuracy",
+                "Deepen understanding of graph algorithms, dynamic programming and advanced data structures like segment trees and tries"
+            ]
+        },
+        "technicalProficiency": {
+            "languageProficiency": {},
+            "frameworkProficiency": {},
+            "architecturePatterns": {},
+            "problemSolvingSkills": {}
+        },
+        "careerRecommendations": {
+            "immediateActions": [],
+            "longTermGoals": [],
+            "learningPaths": [],
+            "recommendedTechnologies": []
+        }
+    },
+    "metadata": {
+        "generatedAt": "2025-11-02T19:29:26.8491381",
+        "githubLastAnalyzed": "2025-11-02T19:29:17.456",
+        "leetcodeLastAnalyzed": null,
+        "dataFreshness": "STALE",
+        "hasCompleteData": true,
+        "dataSources": [],
+        "analysisVersion": "1.0"
+    }
+}
