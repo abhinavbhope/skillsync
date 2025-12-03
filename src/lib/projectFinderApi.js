@@ -17,7 +17,7 @@ const getHeaders = (method = 'GET') => {
             console.warn('[projectFinderApi:getHeaders] CSRF token not found.');
         }
     }
-    
+
     return headers;
 };
 
@@ -28,8 +28,8 @@ const handleResponse = async (response) => {
     let data = {};
 
     if (contentType && contentType.includes('application/json')) {
-        try { 
-            data = await response.json(); 
+        try {
+            data = await response.json();
         } catch (error) {
             console.warn('[handleResponse] JSON parse failed', error);
             data = { message: response.statusText };
@@ -47,15 +47,10 @@ const handleResponse = async (response) => {
         error.data = data;
         throw error;
     }
-    
+
     return data;
 };
 
-/**
- * Starts the recommendation generation process.
- * @param {object} data - Configuration for generation.
- * @returns {Promise<{jobId: string}>}
- */
 export const generateRecommendations = async (data) => {
     const response = await fetch(`${API_BASE_URL}/generate`, {
         method: 'POST',
@@ -66,11 +61,6 @@ export const generateRecommendations = async (data) => {
     return handleResponse(response);
 };
 
-/**
- * Polls for the status of a generation job.
- * @param {string} jobId - The ID of the job.
- * @returns {Promise<object>}
- */
 export const getStatus = async (jobId) => {
     const response = await fetch(`${API_BASE_URL}/status/${jobId}`, {
         headers: getHeaders('GET'),
@@ -79,11 +69,6 @@ export const getStatus = async (jobId) => {
     return handleResponse(response);
 };
 
-/**
- * Fetches the results of a completed job.
- * @param {string} jobId - The ID of the job.
- * @returns {Promise<object>}
- */
 export const getResults = async (jobId) => {
     const response = await fetch(`${API_BASE_URL}/result/${jobId}`, {
         headers: getHeaders('GET'),
@@ -92,10 +77,6 @@ export const getResults = async (jobId) => {
     return handleResponse(response);
 };
 
-/**
- * Fetches saved project recommendations for the user.
- * @returns {Promise<object>}
- */
 export const getSaved = async () => {
     const response = await fetch(`${API_BASE_URL}/saved`, {
         headers: getHeaders('GET'),
@@ -103,10 +84,7 @@ export const getSaved = async () => {
     });
     return handleResponse(response);
 };
-/**
- * Deletes all saved recommendations for the user.
- * @returns {Promise<object>}
- */
+
 export const deleteRecommendations = async () => {
     const response = await fetch(`${API_BASE_URL}/recommendations`, {
         method: 'DELETE',
@@ -114,11 +92,4 @@ export const deleteRecommendations = async () => {
         credentials: 'include',
     });
     return handleResponse(response);
-}
-export {
-  generateRecommendations,
-  getStatus,
-  getResults,
-  getSaved,
-  deleteRecommendations  // Make sure this is included here
 };
