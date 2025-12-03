@@ -123,36 +123,7 @@ const SkillGraphSection = () => {
               </div>
 
               {/* Optional: Input Section for user skills */}
-              <div className="mt-12 lg:mt-16 pt-8 border-t border-white/10">
-                <div className="max-w-2xl mx-auto">
-                  <h3 className="text-xl font-semibold text-white text-center mb-4">
-                    Enter Your Skills for Personalized Recommendations
-                  </h3>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Input 
-                      placeholder="e.g., React, Node.js, Python, Docker, AWS..." 
-                      className="bg-black/30 border-white/20 h-12 flex-grow"
-                      value={userSkills}
-                      onChange={(e) => setUserSkills(e.target.value)}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                          handleGetRecommendations();
-                        }
-                      }}
-                    />
-                    <Button 
-                      className="h-12 px-6 sm:px-8"
-                      onClick={handleGetRecommendations}
-                    >
-                      <Zap className="mr-2 h-4 w-4" />
-                      Get Recommendations
-                    </Button>
-                  </div>
-                  <p className="text-sm text-gray-500 text-center mt-4">
-                    Enter your skills separated by commas to get personalized project suggestions
-                  </p>
-                </div>
-              </div>
+              
             </CardContent>
           </div>
         </Card>

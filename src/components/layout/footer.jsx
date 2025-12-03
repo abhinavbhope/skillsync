@@ -10,6 +10,7 @@ const Footer = () => {
           <div className="mb-4 md:mb-0">
             <h3 className="text-xl font-headline font-bold text-white">SkillSync</h3>
             <p className="text-sm mt-1">Your Skills Are Your Resume.</p>
+            <p>Abhinav Bhope</p>
           </div>
           <div className="flex space-x-6 mb-4 md:mb-0">
             <Link href="#" className="hover:text-primary transition-colors"><Github size={20} /></Link>
