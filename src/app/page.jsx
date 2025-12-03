@@ -1,4 +1,4 @@
-'use client';                         // ← add at the top
+'use client';
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import HeroSection from "@/components/sections/hero-section";
@@ -11,10 +11,25 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
-        <HeroSection />
-        <StatsSection />
-        <SkillGraphSection />
-        <FinalCtaSection />
+        {/* Hero Section with responsive padding */}
+        <div className="px-4 sm:px-6 lg:px-8">
+          <HeroSection />
+        </div>
+        
+        {/* Stats Section with responsive padding and spacing */}
+        <div className="px-4 sm:px-6 lg:px-8 mt-8 sm:mt-12 lg:mt-16">
+          <StatsSection />
+        </div>
+        
+        {/* Skill Graph Section with responsive padding and spacing */}
+        <div className="px-4 sm:px-6 lg:px-8 mt-8 sm:mt-12 lg:mt-16">
+          <SkillGraphSection />
+        </div>
+        
+        {/* Final CTA Section with responsive padding and spacing */}
+        <div className="px-4 sm:px-6 lg:px-8 mt-8 sm:mt-12 lg:mt-16">
+          <FinalCtaSection />
+        </div>
       </main>
       <Footer />
     </div>

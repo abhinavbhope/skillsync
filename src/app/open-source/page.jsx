@@ -31,6 +31,119 @@ const cardHover = {
   y: -4,
   transition: { type: "spring", stiffness: 300 }
 };
+const HeroSection = ({ scrollToExplore }) => {
+  return (
+    <section className="relative w-full pt-32 pb-24 overflow-hidden">
+      
+      {/* Background Glow */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent blur-3xl opacity-40"></div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="max-w-5xl mx-auto px-6 text-center relative z-10"
+      >
+        <h1 className="text-5xl md:text-7xl font-extrabold font-headline text-white drop-shadow-lg">
+          Your Next  
+          <span className="text-primary glow-text"> Open-Source Journey</span>
+          <br /> Starts Here
+        </h1>
+
+        <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto mt-6 leading-relaxed">
+          Discover high-impact open-source projects tailored to your skills, coding patterns,  
+          and future growth. Powered by deep GitHub analysis + AI matching.
+        </p>
+
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="mt-10"
+        >
+          <Button size="lg" onClick={scrollToExplore} className="px-10 py-6 text-lg rounded-xl shadow-lg shadow-primary/20">
+            Start Exploring <ArrowRight className="ml-2" />
+          </Button>
+        </motion.div>
+      </motion.div>
+
+      {/* Floating Lights */}
+      <div className="absolute top-20 left-32 w-72 h-72 bg-primary/20 blur-[140px] rounded-full opacity-40"></div>
+      <div className="absolute bottom-10 right-32 w-72 h-72 bg-cyan-500/20 blur-[140px] rounded-full opacity-40"></div>
+    </section>
+  );
+};
+const FeatureSection = ({ title, desc, image, reverse }) => {
+  return (
+    <section className="py-20 md:py-28 px-6">
+      <div className={`max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center ${
+        reverse ? "md:flex-row-reverse" : ""
+      }`}>
+
+        {/* Content */}
+        <motion.div
+          initial={{ opacity: 0, x: reverse ? 100 : -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            {title}
+          </h2>
+          <p className="text-gray-300 text-lg max-w-xl leading-relaxed">{desc}</p>
+        </motion.div>
+
+        {/* Card / Image */}
+        <motion.div
+          initial={{ opacity: 0, x: reverse ? -100 : 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative"
+        >
+          <div className="glass-card rounded-2xl border border-white/10 p-4 shadow-2xl shadow-primary/10 hover:shadow-primary/30 transition-all duration-300">
+            <img
+              src={image}
+              className="rounded-xl w-full h-72 object-cover"
+            />
+
+            {/* Neon border glow */}
+            <div className="absolute inset-0 rounded-2xl border border-primary/30 blur-md opacity-30"></div>
+          </div>
+        </motion.div>
+
+      </div>
+    </section>
+  );
+};
+const LandingSections = ({ scrollToExplore }) => {
+  return (
+    <>
+      <HeroSection  scrollToExplore={scrollToExplore} />
+
+      <FeatureSection
+        title="AI-Powered GitHub Skill Analysis"
+        desc="We break down your languages, commit patterns, architecture preferences, repositories, and coding signatures to deeply understand your engineering style."
+        image="/ai-github.png"
+        reverse={false}
+      />
+
+      <FeatureSection
+        title="Smart Matching Across Thousands of Projects"
+        desc="Our intelligent engine compares your skill profile with active open-source repositories and finds the best matches based on difficulty, alignment, and domain relevance."
+        image="/matching.png"
+        reverse={true}
+      />
+
+      <FeatureSection
+        title="Clear Insights for Better Contributions"
+        desc="Understand project structure, tech stack, difficulty, and contribution paths. Perfect for beginners, intermediate developers, and professionals leveling up."
+        image="/last.png"
+        reverse={false}
+      />
+    </>
+  );
+};
 
 const NotLoggedInCard = () => {
     const router = useRouter();
@@ -415,6 +528,11 @@ export default function OpenSourcePage() {
     const [jobId, setJobId] = useState(null);
     const [userProfile, setUserProfile] = useState(null);
     const pollInterval = useRef(null);
+    const exploreRef = useRef(null);
+
+    const scrollToExplore = () => {
+  exploreRef.current?.scrollIntoView({ behavior: "smooth" });
+};
 
     // Load saved recommendations on mount
     useEffect(() => {
@@ -600,18 +718,22 @@ export default function OpenSourcePage() {
             <Navbar />
             <main className="flex-grow flex flex-col items-center justify-center relative overflow-hidden p-4 pt-24 pb-20">
                 <FloatingElements />
-                <AnimatePresence mode="wait">
-                    <motion.div
-                        key={pageState}
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.95 }}
-                        transition={{ duration: 0.3 }}
-                        className="w-full z-10"
-                    >
-                        {renderContent()}
-                    </motion.div>
-                </AnimatePresence>
+                <LandingSections  scrollToExplore={scrollToExplore}/>
+                <div ref={exploreRef}>
+  <AnimatePresence mode="wait">
+    <motion.div
+        key={pageState}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.3 }}
+        className="w-full z-10"
+    >
+        {renderContent()}
+    </motion.div>
+  </AnimatePresence>
+</div>
+
             </main>
             <Footer />
         </div>
